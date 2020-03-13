@@ -73,10 +73,31 @@
 //   </div>
 // </div>
 
+// response.data.articles.javascript.forEach(e => {
+//     //     document
+//     //       .querySelector(".cards-container")
+//     //       .appendChild(programArticles(e));
+//     //   });
+
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then(response => {
-    console.log(response);
+    response.data.articles.javascript.forEach(e =>{
+        document.querySelector('cards-container').appendChild(newArticle(e)); 
+    });
+    response.data.articles.bootstrap.forEach(e =>{
+        document.querySelector('cards-container').appendChild(newArticle(e)); 
+    });
+    response.data.articles.technology.forEach(e =>{
+        document.querySelector('cards-container').appendChild(newArticle(e)); 
+    });
+    response.data.articles.jquery.forEach(e =>{
+        document.querySelector('cards-container').appendChild(newArticle(e)); 
+    });
+    response.data.articles.node.forEach(e =>{
+        document.querySelector('cards-container').appendChild(newArticle(e)); 
+    });
+
 });
 const cardContainer = document.querySelector(".cards-container");
 function newArticle(items) {
@@ -105,7 +126,7 @@ function newArticle(items) {
     imgContainer.appendChild(img);
     
     return card;
-}
+};
 
 
 // //headline: "ES8: The Next Step in the Evolution of Javascript and What it Means For Your Projects"
