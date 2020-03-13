@@ -115,7 +115,7 @@ function newArticle(items) {
     const authorSpan = document.createElement('span');
 
     card.classList.add('card');
-    headline.classList.add('.headline');
+    headline.classList.add('headline');
     author.classList.add('author');
     imgContainer.classList.add('img-container');
 
@@ -124,12 +124,13 @@ function newArticle(items) {
     img.src = items.authorPhoto;
     authorSpan.textContent = items.authorName;
     
-    cardContainer.appendChild(card);
+    
     card.appendChild(headline);
     card.appendChild(author);
     author.appendChild(imgContainer);
     author.appendChild(authorSpan);
     imgContainer.appendChild(img);
+    cardContainer.appendChild(card);
     
     return card;
 };
