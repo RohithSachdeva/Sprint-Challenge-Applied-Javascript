@@ -120,9 +120,9 @@ function newArticle(items) {
     imgContainer.classList.add('img-container');
 
     headline.textContent = items.headline;
-    author.textContent = items.authorName;
+    author.textContent = items.author;
     img.src = items.authorPhoto;
-    authorSpan.textContent = items.authorName;
+    authorSpan.textContent = `By ${items.authorName}`;
     
     
     card.appendChild(headline);
