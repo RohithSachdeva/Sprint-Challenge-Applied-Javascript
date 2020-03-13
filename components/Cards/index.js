@@ -91,8 +91,20 @@ function newArticle(items) {
     headline.classList.add('.headline');
     author.classList.add('author');
     imgContainer.classList.add('img-container');
+
+    headline.textContent = items.headline;
+    author.textContent = items.authorName;
+    img.src = items.authorPhoto;
+    authorSpan.textContent = items.authorName;
     
+    cardContainer.appendChild(card);
+    card.appendChild(headline);
+    card.appendChild(author);
+    author.appendChild(imgContainer);
+    author.appendChild(authorSpan);
+    imgContainer.appendChild(img);
     
+    return card;
 }
 
 
