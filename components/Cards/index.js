@@ -42,15 +42,7 @@
 // response.data.articles.node
 
 
-//<div class="card">
-//   <div class="headline">{Headline of article}</div>
-//   <div class="author">
-//     <div class="img-container">
-//       <img src={url of authors image} />
-//     </div>
-//     <span>By {authors name}</span>
-//   </div>
-// </div>
+
 
 //create function that creates the articles via the data from the object.  Use multiple forEach Loops for the appending??? Not sure if its neccessary but thats what they suggested.  Website layout 
 
@@ -61,8 +53,49 @@
 //       .appendChild(programArticles(e));
 //   });
 
+//so this syntax would go in the .then because we are grabbing the responses from the API;  where programArticles is the function for creating articles??  Create const for cards-container to append to 
+
+// function newTab(data) {
+//     const tab = document.createElement('div');
+//     tab.classList.add('tab');
+//     tab.textContent = data;
+//     return tab;
+// };   
+
+
+//<div class="card">
+//   <div class="headline">{Headline of article}</div>
+//   <div class="author">
+//     <div class="img-container">
+//       <img src={url of authors image} />
+//     </div>
+//     <span>By {authors name}</span>
+//   </div>
+// </div>
+
 
 axios.get('https://lambda-times-backend.herokuapp.com/articles')
 .then(response => {
     console.log(response);
-})
+});
+const cardContainer = document.querySelector(".cards-container");
+function newArticle(items) {
+    const card = document.createElement('div');
+    const headline = document.createElement('div');
+    const author = document.createElement('div');
+    const imgContainer = document.createElement('div');
+    const img = document.createElement('img');
+    const authorSpan = document.createElement('span');
+
+    card.classList.add('card');
+    headline.classList.add('.headline');
+    author.classList.add('author');
+    imgContainer.classList.add('img-container');
+    
+    
+}
+
+
+// //headline: "ES8: The Next Step in the Evolution of Javascript and What it Means For Your Projects"
+// authorPhoto: "./assets/sir.jpg"
+// authorName: "SIR RUFF'N'STUFF"
