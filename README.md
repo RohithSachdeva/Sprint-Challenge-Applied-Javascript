@@ -30,7 +30,12 @@ Edit this document to include your answers after each question. Make sure to lea
 
 1. What is the DOM?
 
+DOM stands for Document Object Model.  It's a standard API for accessing documents through Javascript.  
+
+
 2. What is an event?
+
+
 
 3. What is an event listener?
 
