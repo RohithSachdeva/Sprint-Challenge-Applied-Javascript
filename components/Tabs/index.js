@@ -13,7 +13,7 @@
 // axios.get('url')    .then(response =>{})
 //console.log(response.data);  so data.topics? 
 // //Object
-// topics: Array(5)
+// topics: Array(5)  // already in an Array; can do forEach 
 // 0: "javascript"
 // 1: "bootstrap"
 // 2: "technology"
@@ -21,9 +21,33 @@
 // 4: "node.js"
 // so response.data.topics to a const ... loop thru that?  or can create component that refers to the `${element} and appends it .. still need foreach loop
 
+//dont technically need .catch but it is good practice.  make a const = response.data.topics then loop with a forEach ..
+
+//.catch (earror =>{})
+
+//document.querySelector(".topics").appendChild(???) (BASED ON THE newTab function)... Should be this .. need component function to create the tabs so we can append it.  Before we forEach?  
+// tab = div  class = 'tab'  tab.textContent = (); 
+
+
+ 
+
+
 axios.get('https://lambda-times-backend.herokuapp.com/topics')
 
 .then(response => {
-    response.data.topics  
+    const tabTopics = response.data.topics;
+    tabTopics.forEach(element => {
+        document.querySelector('.topics').appendChild(newTab(element));
+    });
 })
+    .catch(error => {
+        console.log(error);
+    });  
+
+function newTab(data) {
+    const tab = document.createElement('div');
+    tab.classList.add('tab');
+    tab.textContent = data;
+    return tab;
+};
 
